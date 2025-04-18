@@ -10,9 +10,6 @@
         <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/leaflet-search.css">
-        <link rel="stylesheet" href="css/filter.css">
-<link rel="stylesheet" href="css/nouislider.min.css">
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <style>
         html, body, #map {
@@ -38,14 +35,9 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="js/leaflet-search.js"></script>
-        <script src="js/tailDT.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/wNumb.js"></script>
         <script src="data/country_1.js"></script>
-        <script src="data/Quym_2.js"></script>
-        <script src="data/ims_3.js"></script>
-        <script src="data/Xphng_4.js"></script>
+        <script src="data/ims_2.js"></script>
+        <script src="data/Xphng_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -206,289 +198,7 @@
         });
         bounds_group.addLayer(layer_country_1);
         map.addLayer(layer_country_1);
-        function pop_Quym_2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['scalerank'] !== null ? autolinker.link(String(feature.properties['scalerank']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['featurecla'] !== null ? autolinker.link(String(feature.properties['featurecla']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? autolinker.link(String(feature.properties['type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(String(feature.properties['name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['abbrev'] !== null ? autolinker.link(String(feature.properties['abbrev']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['location'] !== null ? autolinker.link(String(feature.properties['location']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['gps_code'] !== null ? autolinker.link(String(feature.properties['gps_code']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['iata_code'] !== null ? autolinker.link(String(feature.properties['iata_code']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wikipedia'] !== null ? autolinker.link(String(feature.properties['wikipedia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['natlscale'] !== null ? autolinker.link(String(feature.properties['natlscale']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['comments'] !== null ? autolinker.link(String(feature.properties['comments']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wikidataid'] !== null ? autolinker.link(String(feature.properties['wikidataid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_ar'] !== null ? autolinker.link(String(feature.properties['name_ar']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_bn'] !== null ? autolinker.link(String(feature.properties['name_bn']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_de'] !== null ? autolinker.link(String(feature.properties['name_de']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_en'] !== null ? autolinker.link(String(feature.properties['name_en']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_es'] !== null ? autolinker.link(String(feature.properties['name_es']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_fr'] !== null ? autolinker.link(String(feature.properties['name_fr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_el'] !== null ? autolinker.link(String(feature.properties['name_el']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_hi'] !== null ? autolinker.link(String(feature.properties['name_hi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_hu'] !== null ? autolinker.link(String(feature.properties['name_hu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_id'] !== null ? autolinker.link(String(feature.properties['name_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_it'] !== null ? autolinker.link(String(feature.properties['name_it']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_ja'] !== null ? autolinker.link(String(feature.properties['name_ja']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_ko'] !== null ? autolinker.link(String(feature.properties['name_ko']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_nl'] !== null ? autolinker.link(String(feature.properties['name_nl']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_pl'] !== null ? autolinker.link(String(feature.properties['name_pl']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_pt'] !== null ? autolinker.link(String(feature.properties['name_pt']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_ru'] !== null ? autolinker.link(String(feature.properties['name_ru']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_sv'] !== null ? autolinker.link(String(feature.properties['name_sv']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_tr'] !== null ? autolinker.link(String(feature.properties['name_tr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_vi'] !== null ? autolinker.link(String(feature.properties['name_vi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_zh'] !== null ? autolinker.link(String(feature.properties['name_zh']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wdid_score'] !== null ? autolinker.link(String(feature.properties['wdid_score']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ne_id'] !== null ? autolinker.link(String(feature.properties['ne_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_fa'] !== null ? autolinker.link(String(feature.properties['name_fa']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_he'] !== null ? autolinker.link(String(feature.properties['name_he']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_uk'] !== null ? autolinker.link(String(feature.properties['name_uk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_ur'] !== null ? autolinker.link(String(feature.properties['name_ur']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name_zht'] !== null ? autolinker.link(String(feature.properties['name_zht']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Quym_2_0(feature) {
-            switch(String(feature.properties['natlscale'])) {
-                case '8.0':
-                    return {
-                pane: 'pane_Quym_2',
-                radius: 4.799999999999999,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(69,157,205,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '10.0':
-                    return {
-                pane: 'pane_Quym_2',
-                radius: 4.799999999999999,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(62,57,226,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '15.0':
-                    return {
-                pane: 'pane_Quym_2',
-                radius: 4.799999999999999,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(147,200,49,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '20.0':
-                    return {
-                pane: 'pane_Quym_2',
-                radius: 4.799999999999999,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(213,79,164,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '30.0':
-                    return {
-                pane: 'pane_Quym_2',
-                radius: 4.799999999999999,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(185,121,212,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '50.0':
-                    return {
-                pane: 'pane_Quym_2',
-                radius: 4.799999999999999,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(221,159,25,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '75.0':
-                    return {
-                pane: 'pane_Quym_2',
-                radius: 4.799999999999999,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(227,80,77,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '150.0':
-                    return {
-                pane: 'pane_Quym_2',
-                radius: 4.799999999999999,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(72,205,74,1.0)',
-                interactive: true,
-            }
-                    break;
-            }
-        }
-        map.createPane('pane_Quym_2');
-        map.getPane('pane_Quym_2').style.zIndex = 402;
-        map.getPane('pane_Quym_2').style['mix-blend-mode'] = 'normal';
-        var layer_Quym_2 = new L.geoJson(json_Quym_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Quym_2',
-            layerName: 'layer_Quym_2',
-            pane: 'pane_Quym_2',
-            onEachFeature: pop_Quym_2,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Quym_2_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_Quym_2);
-        map.addLayer(layer_Quym_2);
-        function pop_ims_3(feature, layer) {
+        function pop_ims_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">scalerank</th>\
@@ -658,11 +368,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ims_3_0(feature) {
+        function style_ims_2_0(feature) {
             switch(String(feature.properties['wdid_score'])) {
                 case '0':
                     return {
-                pane: 'pane_ims_3',
+                pane: 'pane_ims_2',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -678,7 +388,7 @@
                     break;
                 case '2':
                     return {
-                pane: 'pane_ims_3',
+                pane: 'pane_ims_2',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -694,7 +404,7 @@
                     break;
                 case '4':
                     return {
-                pane: 'pane_ims_3',
+                pane: 'pane_ims_2',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -710,7 +420,7 @@
                     break;
                 case '5':
                     return {
-                pane: 'pane_ims_3',
+                pane: 'pane_ims_2',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -726,27 +436,27 @@
                     break;
             }
         }
-        map.createPane('pane_ims_3');
-        map.getPane('pane_ims_3').style.zIndex = 403;
-        map.getPane('pane_ims_3').style['mix-blend-mode'] = 'normal';
-        var layer_ims_3 = new L.geoJson(json_ims_3, {
+        map.createPane('pane_ims_2');
+        map.getPane('pane_ims_2').style.zIndex = 402;
+        map.getPane('pane_ims_2').style['mix-blend-mode'] = 'normal';
+        var layer_ims_2 = new L.geoJson(json_ims_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ims_3',
-            layerName: 'layer_ims_3',
-            pane: 'pane_ims_3',
-            onEachFeature: pop_ims_3,
+            dataVar: 'json_ims_2',
+            layerName: 'layer_ims_2',
+            pane: 'pane_ims_2',
+            onEachFeature: pop_ims_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_ims_3_0(feature));
+                return L.circleMarker(latlng, style_ims_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_ims_3);
-        map.addLayer(layer_ims_3);
-        function pop_Xphng_4(feature, layer) {
+        bounds_group.addLayer(layer_ims_2);
+        map.addLayer(layer_ims_2);
+        function pop_Xphng_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">scalerank</th>\
@@ -916,11 +626,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Xphng_4_0(feature) {
+        function style_Xphng_3_0(feature) {
             switch(String(feature.properties['scalerank'])) {
                 case '2':
                     return {
-                pane: 'pane_Xphng_4',
+                pane: 'pane_Xphng_3',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -936,7 +646,7 @@
                     break;
                 case '3':
                     return {
-                pane: 'pane_Xphng_4',
+                pane: 'pane_Xphng_3',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -952,7 +662,7 @@
                     break;
                 case '4':
                     return {
-                pane: 'pane_Xphng_4',
+                pane: 'pane_Xphng_3',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -968,7 +678,7 @@
                     break;
                 case '5':
                     return {
-                pane: 'pane_Xphng_4',
+                pane: 'pane_Xphng_3',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -984,7 +694,7 @@
                     break;
                 case '6':
                     return {
-                pane: 'pane_Xphng_4',
+                pane: 'pane_Xphng_3',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1000,7 +710,7 @@
                     break;
                 case '7':
                     return {
-                pane: 'pane_Xphng_4',
+                pane: 'pane_Xphng_3',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1016,7 +726,7 @@
                     break;
                 case '8':
                     return {
-                pane: 'pane_Xphng_4',
+                pane: 'pane_Xphng_3',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1032,7 +742,7 @@
                     break;
                 case '9':
                     return {
-                pane: 'pane_Xphng_4',
+                pane: 'pane_Xphng_3',
                 radius: 4.799999999999999,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1048,26 +758,26 @@
                     break;
             }
         }
-        map.createPane('pane_Xphng_4');
-        map.getPane('pane_Xphng_4').style.zIndex = 404;
-        map.getPane('pane_Xphng_4').style['mix-blend-mode'] = 'normal';
-        var layer_Xphng_4 = new L.geoJson(json_Xphng_4, {
+        map.createPane('pane_Xphng_3');
+        map.getPane('pane_Xphng_3').style.zIndex = 403;
+        map.getPane('pane_Xphng_3').style['mix-blend-mode'] = 'normal';
+        var layer_Xphng_3 = new L.geoJson(json_Xphng_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Xphng_4',
-            layerName: 'layer_Xphng_4',
-            pane: 'pane_Xphng_4',
-            onEachFeature: pop_Xphng_4,
+            dataVar: 'json_Xphng_3',
+            layerName: 'layer_Xphng_3',
+            pane: 'pane_Xphng_3',
+            onEachFeature: pop_Xphng_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Xphng_4_0(feature));
+                return L.circleMarker(latlng, style_Xphng_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Xphng_4);
-        map.addLayer(layer_Xphng_4);
+        bounds_group.addLayer(layer_Xphng_3);
+        map.addLayer(layer_Xphng_3);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -1079,9 +789,8 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: 'Xếp hạng<br /><table><tr><td style="text-align: center;"><img src="legend/Xphng_4_20.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_4_31.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_4_42.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_4_53.png" /></td><td>5</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_4_64.png" /></td><td>6</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_4_75.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_4_86.png" /></td><td>8</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_4_97.png" /></td><td>9</td></tr></table>', layer: layer_Xphng_4},
-            {label: 'Điểm số<br /><table><tr><td style="text-align: center;"><img src="legend/ims_3_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/ims_3_21.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/ims_3_42.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/ims_3_53.png" /></td><td>5</td></tr></table>', layer: layer_ims_3},
-            {label: 'Quy mô<br /><table><tr><td style="text-align: center;"><img src="legend/Quym_2_80000.png" /></td><td>8.000</td></tr><tr><td style="text-align: center;"><img src="legend/Quym_2_100001.png" /></td><td>10.000</td></tr><tr><td style="text-align: center;"><img src="legend/Quym_2_150002.png" /></td><td>15.000</td></tr><tr><td style="text-align: center;"><img src="legend/Quym_2_200003.png" /></td><td>20.000</td></tr><tr><td style="text-align: center;"><img src="legend/Quym_2_300004.png" /></td><td>30.000</td></tr><tr><td style="text-align: center;"><img src="legend/Quym_2_500005.png" /></td><td>50.000</td></tr><tr><td style="text-align: center;"><img src="legend/Quym_2_750006.png" /></td><td>75.000</td></tr><tr><td style="text-align: center;"><img src="legend/Quym_2_1500007.png" /></td><td>150.000</td></tr></table>', layer: layer_Quym_2},
+            {label: 'Xếp hạng<br /><table><tr><td style="text-align: center;"><img src="legend/Xphng_3_20.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_3_31.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_3_42.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_3_53.png" /></td><td>5</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_3_64.png" /></td><td>6</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_3_75.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_3_86.png" /></td><td>8</td></tr><tr><td style="text-align: center;"><img src="legend/Xphng_3_97.png" /></td><td>9</td></tr></table>', layer: layer_Xphng_3},
+            {label: 'Điểm số<br /><table><tr><td style="text-align: center;"><img src="legend/ims_2_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/ims_2_21.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/ims_2_42.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/ims_2_53.png" /></td><td>5</td></tr></table>', layer: layer_ims_2},
             {label: '<img src="legend/country_1.png" /> country', layer: layer_country_1},
             {label: "Google Satellite", layer: layer_GoogleSatellite_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
@@ -1095,234 +804,6 @@
         });
         lay.addTo(map);
         setBounds();
-        map.addControl(new L.Control.Search({
-            layer: layer_Quym_2,
-            initial: false,
-            hideMarkerOnCollapse: true,
-            propertyName: 'name_vi'}));
-        document.getElementsByClassName('search-button')[0].className +=
-         ' fa fa-binoculars';
-        var mapDiv = document.getElementById('map');
-        var row = document.createElement('div');
-        row.className="row";
-        row.id="all";
-        row.style.height = "100%";
-        var col1 = document.createElement('div');
-        col1.className="col9";
-        col1.id = "mapWindow";
-        col1.style.height = "99%";
-        col1.style.width = "80%";
-        col1.style.display = "inline-block";
-        var col2 = document.createElement('div');
-        col2.className="col3";
-        col2.id = "menu";
-        col2.style.display = "inline-block";
-        mapDiv.parentNode.insertBefore(row, mapDiv);
-        document.getElementById("all").appendChild(col1);
-        document.getElementById("all").appendChild(col2);
-        col1.appendChild(mapDiv)
-        var Filters = {"scalerank": "int","wdid_score": "int","natlscale": "real"};
-        function filterFunc() {
-          map.eachLayer(function(lyr){
-          if ("options" in lyr && "dataVar" in lyr["options"]){
-            features = this[lyr["options"]["dataVar"]].features.slice(0);
-            try{
-              for (key in Filters){
-                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
-                if (Filters[key] == "str" || Filters[key] == "bool"){
-                  var selection = [];
-                  var options = document.getElementById("sel_" + keyS).options
-                  for (var i=0; i < options.length; i++) {
-                    if (options[i].selected) selection.push(options[i].value);
-                  }
-                    try{
-                      if (key in features[0].properties){
-                        for (i = features.length - 1;
-                          i >= 0; --i){
-                          if (selection.indexOf(
-                          features[i].properties[key])<0
-                          && selection.length>0) {
-                          features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                  }
-                }
-                if (Filters[key] == "int"){
-                  sliderVals =  document.getElementById(
-                    "div_" + keyS).noUiSlider.get();
-                  try{
-                    if (key in features[0].properties){
-                    for (i = features.length - 1; i >= 0; --i){
-                      if (parseInt(features[i].properties[key])
-                          < sliderVals[0]
-                          || parseInt(features[i].properties[key])
-                          > sliderVals[1]){
-                            features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                    }
-                  }
-                if (Filters[key] == "real"){
-                  sliderVals =  document.getElementById(
-                    "div_" + keyS).noUiSlider.get();
-                  try{
-                    if (key in features[0].properties){
-                    for (i = features.length - 1; i >= 0; --i){
-                      if (features[i].properties[key]
-                          < sliderVals[0]
-                          || features[i].properties[key]
-                          > sliderVals[1]){
-                            features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                    }
-                  }
-                if (Filters[key] == "date"
-                  || Filters[key] == "datetime"
-                  || Filters[key] == "time"){
-                  try{
-                    if (key in features[0].properties){
-                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
-                      startdate = document.getElementById("dat_" +
-                        HTMLkey + "_date1").value.replace(" ", "T");
-                      enddate = document.getElementById("dat_" +
-                        HTMLkey + "_date2").value.replace(" ", "T");
-                      for (i = features.length - 1; i >= 0; --i){
-                        if (features[i].properties[key] < startdate
-                          || features[i].properties[key] > enddate){
-                          features.splice(i,1);
-                        }
-                      }
-                    }
-                  } catch(err){
-                  }
-                }
-              }
-            } catch(err){
-            }
-          this[lyr["options"]["layerName"]].clearLayers();
-          this[lyr["options"]["layerName"]].addData(features);
-          }
-          })
-        }
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
-            var div_scalerank = document.createElement("div");
-            div_scalerank.id = "div_scalerank";
-            div_scalerank.className = "slider";
-            document.getElementById("menu").appendChild(div_scalerank);
-            var lab_scalerank = document.createElement('div');
-            lab_scalerank.innerHTML  = 'scalerank: <span id="val_scalerank"></span>';
-            lab_scalerank.className = 'filterlabel';
-            document.getElementById("menu").appendChild(lab_scalerank);
-            var reset_scalerank = document.createElement('div');
-            reset_scalerank.innerHTML = 'clear filter';
-            reset_scalerank.className = 'filterlabel';
-            lab_scalerank.className = 'filterlabel';
-            reset_scalerank.onclick = function() {
-                sel_scalerank.noUiSlider.reset();
-            };
-            document.getElementById("menu").appendChild(reset_scalerank);
-            var sel_scalerank = document.getElementById('div_scalerank');
-            noUiSlider.create(sel_scalerank, {
-                connect: true,
-                start: [2, 9],
-                step: 1,
-                format: wNumb({
-                    decimals: 0,
-                    }),
-                range: {
-                min: 2,
-                max: 9
-                }
-            });
-            sel_scalerank.noUiSlider.on('update', function (values) {
-            filterVals =[];
-            for (value in values){
-            filterVals.push(parseInt(value))
-            }
-            val_scalerank = document.getElementById('val_scalerank');
-            val_scalerank.innerHTML = values.join(' - ');
-                filterFunc()
-            });
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
-            var div_wdid_score = document.createElement("div");
-            div_wdid_score.id = "div_wdid_score";
-            div_wdid_score.className = "slider";
-            document.getElementById("menu").appendChild(div_wdid_score);
-            var lab_wdid_score = document.createElement('div');
-            lab_wdid_score.innerHTML  = 'wdid_score: <span id="val_wdid_score"></span>';
-            lab_wdid_score.className = 'filterlabel';
-            document.getElementById("menu").appendChild(lab_wdid_score);
-            var reset_wdid_score = document.createElement('div');
-            reset_wdid_score.innerHTML = 'clear filter';
-            reset_wdid_score.className = 'filterlabel';
-            lab_wdid_score.className = 'filterlabel';
-            reset_wdid_score.onclick = function() {
-                sel_wdid_score.noUiSlider.reset();
-            };
-            document.getElementById("menu").appendChild(reset_wdid_score);
-            var sel_wdid_score = document.getElementById('div_wdid_score');
-            noUiSlider.create(sel_wdid_score, {
-                connect: true,
-                start: [0, 5],
-                step: 1,
-                format: wNumb({
-                    decimals: 0,
-                    }),
-                range: {
-                min: 0,
-                max: 5
-                }
-            });
-            sel_wdid_score.noUiSlider.on('update', function (values) {
-            filterVals =[];
-            for (value in values){
-            filterVals.push(parseInt(value))
-            }
-            val_wdid_score = document.getElementById('val_wdid_score');
-            val_wdid_score.innerHTML = values.join(' - ');
-                filterFunc()
-            });
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
-            var div_natlscale = document.createElement("div");
-            div_natlscale.id = "div_natlscale";
-            div_natlscale.className = "slider";
-            document.getElementById("menu").appendChild(div_natlscale);
-            var lab_natlscale = document.createElement('div');
-            lab_natlscale.innerHTML  = 'natlscale: <span id="val_natlscale"></span>';
-            lab_natlscale.className = 'filterlabel';
-            document.getElementById("menu").appendChild(lab_natlscale);
-            var reset_natlscale = document.createElement('div');
-            reset_natlscale.innerHTML = 'clear filter';
-            reset_natlscale.className = 'filterlabel';
-            lab_natlscale.className = 'filterlabel';
-            reset_natlscale.onclick = function() {
-                sel_natlscale.noUiSlider.reset();
-            };
-            document.getElementById("menu").appendChild(reset_natlscale);
-            var sel_natlscale = document.getElementById('div_natlscale');
-            noUiSlider.create(sel_natlscale, {
-                connect: true,
-                start: [8.0, 150.0],
-                range: {
-                min: 8.0,
-                max: 150.0
-                }
-            });
-            sel_natlscale.noUiSlider.on('update', function (values) {
-            val_natlscale = document.getElementById('val_natlscale');
-            val_natlscale.innerHTML = values.join(' - ');
-                filterFunc()
-            });
         </script>
     </body>
 </html>
